@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <title>WebXR Application</title>
+        <link rel="icon" type="image/png" href="favicon.ico"/>
+        <meta name="description" content="3D Application">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+		<script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body >
+        <a-scene    renderer="antialias: true; colorManagement: true; physicallyCorrectLights: true; logarithmicDepthBuffer: true;"
+					shadow="type: pcfsoft"
+					cursor="rayOrigin: mouse"
+					>
+            <!-- Assets -->
+            <a-assets timeout = 30000>
+			<!-- 3D models -->
+				<a-asset-item id="Frame" src="./assets/Frame.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder_a" src="./assets/Cylinder_a.gltf"></a-asset-item>
+				<a-asset-item id="Cylinder_b" src="./assets/Cylinder_b.gltf"></a-asset-item>
+				<a-asset-item id="Sphere" src="./assets/Sphere.gltf"></a-asset-item>
+				<a-asset-item id="Text.003" src="./assets/Text.003.gltf"></a-asset-item>
+				<a-asset-item id="Text.004" src="./assets/Text.004.gltf"></a-asset-item>
+				<a-asset-item id="Text.005" src="./assets/Text.005.gltf"></a-asset-item>
+				
+			<!-- Pic --> 
+				<img id="logo" src="images/lovet.png">				
+				<img id="pic_1" crossOrigin src="images/1.svg" >
+				<img id="pic_2" crossOrigin src="images/2.svg" >
+				<img id="pic_3" crossOrigin src="images/3.svg" >
+				<img id="pic_4" crossOrigin src="images/4.svg" >
+				<img id="pic_5" crossOrigin src="images/5.svg" >
+				<img id="pic_6" crossOrigin src="images/6.svg" > 
+				<img id="pic_7" crossOrigin src="images/7.svg" >
+				<img id="pic_8" crossOrigin src="images/8.svg" >
+				<img id="pic_9" crossOrigin src="images/9.svg" >
+				<img id="pic_10" crossOrigin src="images/10.svg" >
+				<img id="pic_11" crossOrigin src="images/11.svg" >
+				<img id="pic_12" crossOrigin src="images/12.svg" >
+				<img id="pic_13" crossOrigin src="images/13.svg" >
+				<img id="pic_14" crossOrigin src="images/14.svg" >				
+				<img id="pic_15" crossOrigin src="images/15.svg" >
+				<img id="pic_16" crossOrigin src="images/16.svg" >
+				<img id="pic_17" crossOrigin src="images/17.svg" >
+				<img id="pic_18" crossOrigin src="images/18.svg" >				
+				<img id="pic_19" crossOrigin src="images/19.svg" >
+				<img id="pic_20" crossOrigin src="images/20.svg" >
+
+            </a-assets>
+
+			<!-- Camera -->			
+				<a-entity id="camera" camera="fov: 60" position="115 1.8 110" wasd-controls="acceleration: 200;" look-controls limit-my-distance >
+				</a-entity>		
+
+			<!-- Structure -->
+				<a-plane  id="Floor" color="#92b1d3" position="0 0 0" rotation="-90 0 0" height="300" width="300" visible="true;" shadow="receive: false;" ></a-plane>
+				<a-plane  id="Roof" color="#999999" position="0 30 0" rotation="90 0 0" height="300" width="300" visible="true;" shadow="receive: false;" ></a-plane>
+				
+				<a-plane  id="Wall_1" color="#ffffff" position="0 15 150" rotation="0 180 0" height="30" width="300" visible="true;" shadow="receive: true;" ></a-plane>
+				<a-plane  id="Wall_2" color="#ffffff" position="0 15 -150" rotation="0 0 0" height="30" width="300" visible="true;" shadow="receive: true;" ></a-plane>
+				<a-plane  id="Wall_4" color="#ffffff" position="150 15 0" rotation="0 -90 0" height="30" width="300" visible="true;" shadow="receive: true;" ></a-plane>
+				<a-plane  id="Wall_3" color="#000000" position="-150 15 0" rotation="0 90 0" height="30" width="300" visible="true;" shadow="receive: true;" ></a-plane>
+
+				<a-plane id="Logo_1" src="#logo"  position="-149.9 15 100" rotation="0 90 0"  height="30" width="30" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane id="Logo_1" src="#logo"  position="-149.9 15 -100" rotation="0 90 0"  height="30" width="30" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+
+				<a-box  id="Wall_5" color="#000000" position="-25 15 60" rotation="0 0 0" height="30" width="250" depth="20" visible="true;" shadow="receive: false;" material="side: double;" ></a-box>
+				<a-box  id="Wall_6" color="#000000" position="-25 15 -60" rotation="0 0 0" height="30" width="250" depth="20" visible="true;" shadow="receive: false;" material="side: double;" ></a-box>
+				
+
+            <!-- Left Wall -->
+				<a-entity id="#Cylinder_a" gltf-model="#Cylinder_a"  scale="1 1 1" position="-25.009674072265625 29.164968490600586 126.69343566894531" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder_b" gltf-model="#Cylinder_b"  scale="1 1 1" position="-25.009674072265625 28.756799697875977 127.0010986328125" visible="true"  ></a-entity>
+
+				<a-entity id="#Cylinder.002" gltf-model="#Cylinder_a"  scale="1 1 1" position="-75.00967407226562 29.164968490600586 126.69343566894531" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.004" gltf-model="#Cylinder_b"  scale="1 1 1" position="-75.00967407226562 28.756799697875977 127.0010986328125" visible="true"  ></a-entity>
+			
+				<a-entity id="#Cylinder.005" gltf-model="#Cylinder_a"  scale="1 1 1" position="74.99032592773438 29.164968490600586 126.69343566894531" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.006" gltf-model="#Cylinder_b"  scale="1 1 1" position="74.99032592773438 28.756799697875977 127.0010986328125" visible="true"  ></a-entity>
+			
+				<a-entity id="#Cylinder.007" gltf-model="#Cylinder_a"  scale="1 1 1" position="24.990324020385742 29.164968490600586 126.69343566894531" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.008" gltf-model="#Cylinder_b"  scale="1 1 1" position="24.990324020385742 28.756799697875977 127.0010986328125" visible="true"  ></a-entity>
+			
+				<a-entity id="#Cylinder.035" gltf-model="#Cylinder_a"  scale="1 1 1" rotation="0 315 0" position="-124.97779083251953 29.16497039794922 124.98773193359375" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.036" gltf-model="#Cylinder_b"  scale="1 1 1" rotation="0 315 0" position="-125.19535064697266 28.756799697875977 125.20529174804688" visible="true"  ></a-entity>
+			
+			
+			
+			<!-- Front Wall -->
+				<a-entity id="#Cylinder.011" gltf-model="#Cylinder_a"  scale="1 1 1" rotation="0 135 0" position="124.97779083251953 29.16497039794922 -124.98773193359375" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.010" gltf-model="#Cylinder_b"  scale="1 1 1" rotation="0 135 0" position="125.19535064697266 28.756799697875977 -125.20529174804688" visible="true"  ></a-entity>
+			
+				<a-entity id="#Cylinder.013" gltf-model="#Cylinder_a"  scale="1 1 1" rotation="0 90 0" position="126.69340515136719 29.16497039794922 -25.0" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.012" gltf-model="#Cylinder_b"  scale="1 1 1" rotation="0 90 0" position="127.00106811523438 28.756799697875977 -25.0" visible="true"  ></a-entity>
+						
+				<a-entity id="#Cylinder.015" gltf-model="#Cylinder_a"  scale="1 1 1" rotation="0 90 0" position="126.69340515136719 29.16497039794922 -75.0" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.014" gltf-model="#Cylinder_b"  scale="1 1 1" rotation="0 90 0" position="127.00106811523438 28.756799697875977 -75.0" visible="true"  ></a-entity>
+				
+				<a-entity id="#Cylinder.018" gltf-model="#Cylinder_a"  scale="1 1 1" rotation="0 90 0" position="126.69340515136719 29.16497039794922 75.0" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.016" gltf-model="#Cylinder_b"  scale="1 1 1" rotation="0 90 0" position="127.00106811523438 28.756799697875977 75.0" visible="true"  ></a-entity>
+
+				<a-entity id="#Cylinder.019" gltf-model="#Cylinder_a"  scale="1 1 1" rotation="0 90 0" position="126.69340515136719 29.16497039794922 25.0" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.017" gltf-model="#Cylinder_b"  scale="1 1 1" rotation="0 90 0" position="127.00106811523438 28.756799697875977 25.0" visible="true"  ></a-entity>
+				
+				<a-entity id="#Cylinder.031" gltf-model="#Cylinder_a"  scale="1 1 1" rotation="0 45 0" position="124.97779083251953 29.16497039794922 124.98773193359375" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.032" gltf-model="#Cylinder_b"  scale="1 1 1" rotation="0 45 0" position="125.19535064697266 28.756799697875977 125.20529174804688" visible="true"  ></a-entity>
+			
+		
+			<!-- Right Wall -->
+				<a-entity id="#Cylinder.020" gltf-model="#Cylinder_a"  scale="1 1 1" rotation="0 180 0" position="75.00537872314453 29.164968490600586 -126.69303894042969" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.022" gltf-model="#Cylinder_b"  scale="1 1 1" rotation="0 180 0" position="75.00537872314453 28.756799697875977 -127.00070190429688" visible="true"  ></a-entity>
+
+				<a-entity id="#Cylinder.009" gltf-model="#Cylinder_a"  scale="1 1 1" rotation="0 180 0" position="25.0053768157959 29.164968490600586 -126.69303131103516" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.021" gltf-model="#Cylinder_b"  scale="1 1 1" rotation="0 180 0" position="25.0053768157959 28.756799697875977 -127.00069427490234" visible="true"  ></a-entity>
+				
+				<a-entity id="#Cylinder.023" gltf-model="#Cylinder_a"  scale="1 1 1" rotation="0 180 0" position="-74.99462127685547 29.164968490600586 -126.69302368164062" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.024" gltf-model="#Cylinder_b"  scale="1 1 1" rotation="0 180 0" position="-74.99462127685547 28.756799697875977 -127.00068664550781" visible="true"  ></a-entity>
+				
+				<a-entity id="#Cylinder.025" gltf-model="#Cylinder_a"  scale="1 1 1" rotation="0 180 0" position="-24.994619369506836 29.164968490600586 -126.69303131103516" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.026" gltf-model="#Cylinder_b"  scale="1 1 1" rotation="0 180 0" position="-24.994619369506836 28.756799697875977 -127.00069427490234" visible="true"  ></a-entity>
+				
+				<a-entity id="#Cylinder.033" gltf-model="#Cylinder_a"  scale="1 1 1" rotation="0 225 0" position="-124.97779083251953 29.16497039794922 -124.98773193359375" visible="true"  ></a-entity>
+				<a-entity id="#Cylinder.034" gltf-model="#Cylinder_b"  scale="1 1 1" rotation="0 225 0" position="-125.19535064697266 28.756799697875977 -125.20529174804688" visible="true"  ></a-entity>
+			
+			<!-- FRAME Front Wall -->
+				<a-entity  id="#Frame_1" gltf-model="#Frame"  scale="1 1 1" position="138.08201599121094 11.000000953674316 -138.02557373046875" rotation="0 -45 0" visible="true" ></a-entity>
+				<a-entity  id="#Frame_2" gltf-model="#Frame"  scale="1 1 1" position="137.50210571289062 11.000000953674316 137.54811096191406" rotation="0 45 0" visible="true"  ></a-entity>
+				<a-entity id="#Frame_3" gltf-model="#Frame"  scale="1 1 1" position="144.6361846923828 11.000000953674316 24.996919631958008" rotation="0 -90 0" visible="true"  ></a-entity>
+				<a-entity  id="#Frame_4" gltf-model="#Frame"  scale="1 1 1" position="144.6361846923828 11.000000953674316 74.99693298339844" rotation="0 -90 0" visible="true"  ></a-entity>
+				<a-entity  id="#Frame_5" gltf-model="#Frame"  scale="1 1 1" position="144.6361846923828 11.000000953674316 -75.00306701660156" rotation="0 -90 0" visible="true"  ></a-entity>
+				<a-entity  id="#Frame_6" gltf-model="#Frame"  scale="1 1 1" position="144.6361846923828 11.000000953674316 -25.00307846069336" rotation="0 -90 0" visible="true" ></a-entity>
+				
+			<!-- FRAME Left Wall -->
+				<a-entity id="#Frame_7" gltf-model="#Frame"  scale="1 1 1" position="-137.5577850341797 11.000001907348633 137.50213623046875" rotation="0 -45 0" visible="true"  ></a-entity>
+				<a-entity  id="#Frame_8" gltf-model="#Frame"  scale="1 1 1" position="-25.0065975189209 11.000001907348633 144.63621520996094" rotation="0 0 0" visible="true" ></a-entity>
+				<a-entity  id="#Frame_9" gltf-model="#Frame"  scale="1 1 1" position="-75.00660705566406 11.000001907348633 144.63621520996094" rotation="0 0 0" visible="true" ></a-entity>
+				<a-entity  id="#Frame_10" gltf-model="#Frame"  scale="1 1 1" position="74.99339294433594 11.000001907348633 144.63621520996094" rotation="0 0 0" visible="true" ></a-entity>
+				<a-entity  id="#Frame_11" gltf-model="#Frame"  scale="1 1 1" position="24.993406295776367 11.000001907348633 144.63621520996094" rotation="0 0 0" visible="true" ></a-entity>
+				
+			<!-- FRAME Right Wall -->
+				<a-entity id="#Frame_12" gltf-model="#Frame"  scale="1 1 1" position="25 11 -144.75" rotation="0 0 0"  height="20" width="20" visible="true;" shadow="receive: true;"  ></a-entity>
+				<a-entity  id="#Frame_13" gltf-model="#Frame"  scale="1 1 1" position="75.00231170654297 11.000000953674316 -144.63583374023438" rotation="0 0 0" visible="true"  ></a-entity>
+				<a-entity  id="#Frame_14" gltf-model="#Frame"  scale="1 1 1" position="-74.99768829345703 11.000000953674316 -144.6358184814453" rotation="0 0 0" visible="true"  ></a-entity>
+				<a-entity  id="#Frame_15" gltf-model="#Frame"  scale="1 1 1" position="-24.997705459594727 11.000000953674316 -144.6358184814453" rotation="0 0 0" visible="true" ></a-entity>
+				<a-entity  id="#Frame_16" gltf-model="#Frame"  scale="1 1 1" position="-137.50640869140625 11.0 -137.54769897460938" rotation="0 45 0" visible="true"  ></a-entity>
+							
+		
+			<!-- PIC Front Wall  -->
+				<a-plane display-info id="Pic_1" src="#pic_1"   position="145.0 11.0 -25.0" rotation="0 -90 0"  height="20" width="20" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane display-info id="Pic_2" src="#pic_2"  position="145.0 11.0 -75.0" rotation="0 -90 0"  height="20" width="20" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane display-info id="Pic_3" src="#pic_3"  position="145.0 11.0 25.0" rotation="0 -90 0"  height="20" width="20" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane display-info id="Pic_4" src="#pic_4"  position="145.0 11.0 75.0" rotation="0 -90 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+					
+				<a-plane display-info id="Pic_5" src="#pic_5"  position="137.75807189941406 11.014898300170898 137.80593872070312" rotation="0 -135 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane display-info id="Pic_6" src="#pic_6"  position="137.75807189941406 11.014898300170898 -137.80593872070312" rotation="0 -45 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+
+			<!-- PIC Left Wall -->
+				<a-plane display-info id="Pic_7" src="#pic_7"  position="24.990324020385742 11.000000953674316 145.00003051757812" rotation="0 180 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane display-info id="Pic_8" src="#pic_8"  position="-75.00967407226562 11.000000953674316 145.00003051757812" rotation="0 180 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane display-info id="Pic_9" src="#pic_9" position="-25.009674072265625 11.000000953674316 145.00003051757812" rotation="0 180 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane display-info id="Pic_10" src="#pic_10"  position="74.99032592773438 11.000000953674316 145.00003051757812" rotation="0 180 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+				
+				<a-plane display-info id="Pic_11" src="#pic_11"  position="-137.81561279296875 11.014899253845215 137.7581024169922" rotation="0 135 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+
+
+			<!-- PIC Right Wall -->
+				<a-plane display-info id="Pic_12" src="#pic_12"  position="-74.99462127685547 11.000000953674316 -144.9996337890625" rotation="0 0 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>				
+				<a-plane display-info id="Pic_13" src="#pic_13"  position="25 11 -145" rotation="0 0 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane display-info id="Pic_14" src="#pic_14"  position="75.00537872314453 11.000000953674316 -144.9996337890625" rotation="0 0 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane display-info id="Pic_15"  src="#pic_15" position="-24.9946231842041 11.000000953674316 -144.9996337890625" rotation="0 0 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane display-info id="Pic_16"  src="#pic_16" position="-137.76235961914062 11.014898300170898 -137.80552673339844" rotation="0 45 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+
+
+			<!-- PIC center -->
+
+				<a-plane display-info id="Pic_17"  src="#pic_17" position="15 13 40" rotation="0 -45 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane display-info id="Pic_18"  src="#pic_18" position="15 13 -40" rotation="0 45 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane display-info id="Pic_19"  src="#pic_19" position="-45 13 40" rotation="0 -45 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane display-info id="Pic_20"  src="#pic_20" position="-45 13 -40" rotation="0 45 0"  height="20" width="20" visible="true;" shadow="receive: true;" material="shader: flat; side: double;" ></a-plane>
+	
+			<!-- Roof light -->	
+				<a-entity id="#Sphere.001" gltf-model="#Sphere"  scale="1 1 1" position="40.0 29.713130950927734 90.0" visible="true" shadow="receive: false;"  ></a-entity>
+				<a-entity id="#Sphere.003" gltf-model="#Sphere"  scale="1 1 1" position="40.0 29.713130950927734 -90.0" visible="true" shadow="receive: false;" ></a-entity>
+				<a-entity id="#Sphere.010" gltf-model="#Sphere"  scale="1 1 1" position="-40.0 29.713130950927734 90.0" visible="true" shadow="receive: false;" ></a-entity>
+				<a-entity id="#Sphere.011" gltf-model="#Sphere"  scale="1 1 1" position="-40.0 29.713130950927734 -90.0" visible="true"shadow="receive: false;"  ></a-entity>
+				<a-entity id="#Sphere.014" gltf-model="#Sphere"  scale="1 1 1" position="90.0 29.713130950927734 90.0" visible="true" shadow="receive: false;" ></a-entity>
+				<a-entity id="#Sphere.015" gltf-model="#Sphere"  scale="1 1 1" position="90.0 29.713130950927734 40.0" visible="true" shadow="receive: false;" ></a-entity>
+				<a-entity id="#Sphere.017" gltf-model="#Sphere"  scale="1 1 1" position="40.0 29.713130950927734 40.0" visible="true" shadow="receive: false;" ></a-entity>
+				<a-entity id="#Sphere.018" gltf-model="#Sphere"  scale="1 1 1" position="40.0 29.713130950927734 -40.0" visible="true" shadow="receive: false;" ></a-entity>
+				<a-entity id="#Sphere.019" gltf-model="#Sphere"  scale="1 1 1" position="-40.0 29.713130950927734 40.0" visible="true" shadow="receive: false;" ></a-entity>
+				<a-entity id="#Sphere.020" gltf-model="#Sphere"  scale="1 1 1" position="-40.0 29.713130950927734 -40.0" visible="true" shadow="receive: false;" ></a-entity>
+				<a-entity id="#Sphere.021" gltf-model="#Sphere"  scale="1 1 1" position="-90.0 29.713130950927734 40.0" visible="true" shadow="receive: false;" ></a-entity>
+				<a-entity id="#Sphere.022" gltf-model="#Sphere"  scale="1 1 1" position="-90.0 29.713130950927734 -40.0" visible="true" shadow="receive: false;"  ></a-entity>
+				<a-entity id="#Sphere.023" gltf-model="#Sphere"  scale="1 1 1" position="90.0 29.713130950927734 -40.0" visible="true" shadow="receive: false;" ></a-entity>
+				<a-entity id="#Sphere.024" gltf-model="#Sphere"  scale="1 1 1" position="90.0 29.713130950927734 -90.0" visible="true" shadow="receive: false;" ></a-entity>
+				<a-entity id="#Sphere.025" gltf-model="#Sphere"  scale="1 1 1" position="-90.0 29.713130950927734 90.0" visible="true" shadow="receive: false;" ></a-entity>
+				<a-entity id="#Sphere.026" gltf-model="#Sphere"  scale="1 1 1" position="-90.0 29.713130950927734 -90.0" visible="true" shadow="receive: false;" ></a-entity>
+
+			<!-- Texts -->
+				<a-entity id="#Text.003" gltf-model="#Text.003"  scale="1 1 1" position="-145.0 4.541912078857422 0" visible="true" shadow="receive: false;"  ></a-entity>
+				<a-entity id="#Text.004" gltf-model="#Text.004"  scale="1 1 1" position="-145.0 14.034636497497559 0" visible="true" shadow="receive: false;" ></a-entity>
+				<a-entity id="#Text.005" gltf-model="#Text.005"  scale="1 1 1" position="-145.0 24.41856575012207 0" visible="true" shadow="receive: false;" ></a-entity>
+
+        
+
+            <!-- Diffuse Light -->
+            	<a-entity light="type: ambient; color: #ffffff; intensity:0.1"></a-entity>
+
+			<!-- Spot Lights -->
+
+				<!-- Walls -->
+					<a-entity position="127.00106811523438 28.756799697875977 25.0" rotation="-45 -90 90" light="castShadow:true; color:#ffffff; angle:45;  distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+					<a-entity position="127.00106811523438 28.756799697875977 75.0" rotation="-45 -90 90" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+					<a-entity position="127.00106811523438 28.756799697875977 -75.0" rotation="-45 -90 90" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+					<a-entity position="127.00106811523438 28.756799697875977 -25.0" rotation="-45 -90 90" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+					
+					<a-entity position="125.19535064697266 28.756799697875977 -125.20529174804688" rotation="-45 -45 0" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+					<a-entity position="125.19535064697266 28.756799697875977 125.21470642089844" rotation="-45 -135 0" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+					
+					<!-- left zone -->
+					<a-entity id="l_1" position="74.99032592773438 28.756799697875977 127.0010986328125" rotation="-45 180 0" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+					<a-entity id="l_2" position="24.990324020385742 28.756799697875977 127.0010986328125" rotation="-45 180 0" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>				
+					<a-entity id="l_3" position="-25.009674072265625 28.756799697875977 127.0010986328125" rotation="-45 180 0" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+					<a-entity id="l_4" position="-75.00967407226562 28.756799697875977 127.0010986328125" rotation="-45 180 0" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+					<a-entity id="l_5" position="-125.22439575195312 28.756799697875977 125.19537353515625" rotation="-45 135 0" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+					
+
+					<!-- right zone -->
+					<a-entity position="-125.19965362548828 28.756799697875977 -125.21429443359375" rotation="-45 45 0" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>					
+					<a-entity position="25.0053768157959 28.756799697875977 -127.00069427490234"  rotation="-45.0 0 0" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+					<a-entity position="75.00537872314453 28.756799697875977 -127.00070190429688"  rotation="-45.0 0 0" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+					<a-entity position="-74.99462127685547 28.756799697875977 -127.00068664550781"  rotation="-45.0 0 0" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+					<a-entity position="-24.994619369506836 28.756799697875977 -127.00069427490234"  rotation="-45.0 0 0" light="castShadow:true; color:#ffffff; angle:45; distance:60.0; type:spot; intensity:50; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+					
+			<!-- Ambient Light -->
+				<a-entity position="40.0 29.399999618530273 -40.0"  rotation="-90.0 0 0" light=" color:#ffffff; angle:85; distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				<a-entity position="40.0 29.399999618530273 40.0"  rotation="-90.0 0 0" light=" color:#ffffff; angle:85; distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				<a-entity position="-40.0 29.399999618530273 -40.0"  rotation="-90.0 0 0" light=" color:#ffffff; angle:85; distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				<a-entity position="-40.0 29.399999618530273 40.0"  rotation="-90.0 0 0" light=" color:#ffffff; angle:85; distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				
+				<a-entity position="-90.0 29.399999618530273 -40.0"  rotation="-90.0 0 0" light=" color:#ffffff; angle:85; distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				<a-entity position="-90.0 29.399999618530273 40.0"  rotation="-90.0 0 0" light=" color:#ffffff; angle:85; distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				
+				<a-entity position="90.0 29.399999618530273 -40.0"  rotation="-90.0 0 0" light=" color:#ffffff; angle:85; distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				<a-entity position="90.0 29.399999618530273 40.0"  rotation="-90.0 0 0" light=" color:#ffffff; angle:85; distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				<a-entity position="90.0 29.399999618530273 -90.0"  rotation="-90.0 0 0" light=" color:#ffffff; angle:85; distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				<a-entity position="90.0 29.399999618530273 90.0"  rotation="-90.0 0 0" light=" color:#ffffff; angle:85; distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				<a-entity position="40.0 29.399999618530273 -90.0"  rotation="-90.0 0 0" light=" color:#ffffff;angle:85;  distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				<a-entity position="40.0 29.399999618530273 90.0"  rotation="-90.0 0 0" light=" color:#ffffff; angle:85; distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				<a-entity position="-40.0 29.399999618530273 -90.0"  rotation="-90.0 0 0" light=" color:#ffffff;angle:85;  distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				<a-entity position="-40.0 29.399999618530273 90.0"  rotation="-90.0 0 0" light=" color:#ffffff; angle:85; distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				<a-entity position="-90.0 29.399999618530273 90.0" rotation="-90.0 0 0" light=" color:#ffffff; angle:85; distance:60.0; type:spot; intensity:49.0;  penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+				<a-entity position="-90.0 29.399999618530273 -90.0"  rotation="-90.0 0 0" light=" color:#ffffff; angle:85; distance:60.0; type:spot; intensity:49.0; penumbra:0.5; shadowBias: -0.001; shadowCameraFar: 501.02; shadowCameraBottom: 12; shadowCameraFov: 101.79;  shadowCameraTop: -5; shadowCameraRight: 10; shadowCameraLeft: -10; shadowRadius: 2;"></a-entity>
+
+            <!-- Sky -->
+           		<a-sky color="#ECECEC"></a-sky>
+
+				<a-entity id="soundtrack" position="0 5 0" sound="src: url(media/audio.mp3); autoplay: true; volume: 10; refDistance: 10; rolloffFactor: 0.5;"></a-entity>
+					
+			</a-scene>
+
+
+		<div id="infoContainer" class="info-container">
+			
+			<div class="img-button">
+				<img id="icon" class="icon" src="images/lovet.png" >
+
+				<div class="button-container">
+					<div id="link-1" target="_blank" onclick="buyNow()" class="button button1">
+						<a >BUY NOW</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="text">
+				<h2  id="textInfo" class="title">$LOVET #25</h2>	
+				<p id="textOwner" class="info-text" >Owner: </p>
+			</div>
+		
+		</div>
+
+
+
+    </body>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+	<script src="js/solidity_abi.js"></script>
+	<script src="js/app.js"></script>
+</html>
+
