@@ -8,16 +8,28 @@ const textInfo = document.getElementById("textInfo");
 const linkOS = document.getElementById("link-1");
 const textOwner = document.getElementById("textOwner");
 const icon = document.getElementById("icon");
+const loader = document.getElementById("loader");
+const textEnter = document.getElementById("textEnter");
+const loaderWrapper = document.getElementById("loader-wrapper");
+
 
 var url="";
 var tokenData = {};
+var tokenDataLoad = false;
 
 
 const web3 = new Web3(window.ethereum);
 const nft_contract = new web3.eth.Contract(nft_abi, NFT_ADDRESS);
 
 
+const sleep = (milliseconds) => {
+	return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
+
+
 const refresh = async () => {
+    var color="";
     for(let i=1; i<21; i++ ){
         var tmp = {};
         try{
@@ -36,7 +48,15 @@ const refresh = async () => {
         });
         tokenData[i] = tmp;
     }
-    console.log(tokenData);
+    tokenDataLoad = true;
+    loader.src = "images/lovet.svg";
+    textEnter.innerHTML = "ENTER";
+    for(let i=100; i>79; i--){
+        color = "rgba(15, 116, 217, " + i/100 + ")";
+        loaderWrapper.style.background = color;
+        await sleep(100);
+        console.log(color);
+    }
 }
 
 refresh();
@@ -139,7 +159,15 @@ AFRAME.registerComponent('display-info', {
     }
 });
 
+function enter(){
+    if (tokenDataLoad){
+        $(".loader-wrapper").fadeOut("slow");
+    }
+    else{
+        textEnter.innerHTML = "WAIT..";
+    }    
+}
 
 function buyNow() {
     window.open(url,"_blank");
-  }
+}
