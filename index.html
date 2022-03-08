@@ -32,7 +32,8 @@
 				<a-asset-item id="Text.005" src="./assets/Text.005.gltf"></a-asset-item>
 				
 			<!-- Pic --> 
-				<img id="logo" src="images/lovet.png">				
+				<img id="logo" src="images/lovet.png">		
+		    		<img id="placeholder" src="images/placeholder.png">
 				<img id="pic_1" crossOrigin src="images/1.svg" >
 				<img id="pic_2" crossOrigin src="images/2.svg" >
 				<img id="pic_3" crossOrigin src="images/3.svg" >
@@ -78,7 +79,32 @@
 				<a-box  id="Wall_6" color="#000000" position="-25 15 -60" rotation="0 0 0" height="30" width="250" depth="20" visible="true;" shadow="receive: false;" material="side: double;" ></a-box>
 				
 
-            <!-- Left Wall -->
+			<!-- placeholder left -->
+
+				<a-plane id="PH_1" position="-70 4 70.1" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane id="PH_2" position="-60 4 70.1" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane id="PH_3" position="-50 4 70.1" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane id="PH_4" position="-40 4 70.1" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				
+				<a-plane id="PH_5" position="-30 4 70.1" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane id="PH_6" position="-20 4 70.1" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane id="PH_7" position="-10 4 70.1" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane id="PH_8" position="0 4 70.1" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				
+			<!-- placeholder right -->
+
+				<a-plane id="PH_1" position="-70 4 -70.1" rotation="0 180 0" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane id="PH_2" position="-60 4 -70.1" rotation="0 180 0" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane id="PH_3" position="-50 4 -70.1" rotation="0 180 0" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane id="PH_4" position="-40 4 -70.1" rotation="0 180 0" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				
+				<a-plane id="PH_5" position="-30 4 -70.1" rotation="0 180 0" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane id="PH_6" position="-20 4 -70.1" rotation="0 180 0" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane id="PH_7" position="-10 4 -70.1" rotation="0 180 0" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				<a-plane id="PH_8" position="0 4 -70.1" rotation="0 180 0" src="#placeholder"  height="4" width="4" visible="true;" shadow="receive: false;" material="shader: flat; side: double;" ></a-plane>
+				
+
+            		<!-- Left Wall -->
 				<a-entity id="#Cylinder_a" gltf-model="#Cylinder_a"  scale="1 1 1" position="-25.009674072265625 29.164968490600586 126.69343566894531" visible="true"  ></a-entity>
 				<a-entity id="#Cylinder_b" gltf-model="#Cylinder_b"  scale="1 1 1" position="-25.009674072265625 28.756799697875977 127.0010986328125" visible="true"  ></a-entity>
 
