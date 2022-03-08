@@ -103,6 +103,11 @@ body{
   background-color: white;
   color: black;
 }
+.button2:hover {
+  background-color: white;
+  color: black;
+}
+
 
 
 /* Loading */
