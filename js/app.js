@@ -162,6 +162,7 @@ AFRAME.registerComponent('display-info', {
 function enter(){
     if (tokenDataLoad){
         $(".loader-wrapper").fadeOut("slow");
+	document.querySelector('[sound]').components.sound.playSound();
     }
     else{
         textEnter.innerHTML = "WAIT..";
