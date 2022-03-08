@@ -11,6 +11,7 @@ const icon = document.getElementById("icon");
 const loader = document.getElementById("loader");
 const textEnter = document.getElementById("textEnter");
 const loaderWrapper = document.getElementById("loader-wrapper");
+const myaudio = document.getElementById("myaudio");
 
 
 var url="";
@@ -56,7 +57,6 @@ const refresh = async () => {
         color = "rgba(15, 116, 217, " + i/100 + ")";
         loaderWrapper.style.background = color;
         await sleep(100);
-        console.log(color);
     }
 }
 
@@ -167,7 +167,8 @@ $(window).on("load",function(){
 function enter(){
     if (tokenDataLoad && assetsLoad){
         $(".loader-wrapper").fadeOut("slow");
-	document.querySelector('[sound]').components.sound.playSound();
+	myaudio.play();
+	
     }
     else{
         textEnter.innerHTML = "WAIT..";
