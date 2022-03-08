@@ -165,7 +165,7 @@ $(window).on("load",function(){
 });
 
 function enter(){
-    if (tokenDataLoad){
+    if (tokenDataLoad && assetsLoad){
         $(".loader-wrapper").fadeOut("slow");
 	document.querySelector('[sound]').components.sound.playSound();
     }
