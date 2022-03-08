@@ -16,6 +16,7 @@ const loaderWrapper = document.getElementById("loader-wrapper");
 var url="";
 var tokenData = {};
 var tokenDataLoad = false;
+var assetsLoad = false;
 
 
 const web3 = new Web3(window.ethereum);
@@ -157,6 +158,10 @@ AFRAME.registerComponent('display-info', {
         }
  
     }
+});
+
+$(window).on("load",function(){
+	assetsLoad = true;
 });
 
 function enter(){
