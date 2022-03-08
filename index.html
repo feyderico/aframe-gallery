@@ -53,6 +53,8 @@
 				<img id="pic_18" crossOrigin src="images/18.svg" >				
 				<img id="pic_19" crossOrigin src="images/19.svg" >
 				<img id="pic_20" crossOrigin src="images/20.svg" >
+		    		
+		    		<audio id="audio" src="media/audio.mp3" preload="auto"></audio>
 
             </a-assets>
 
@@ -263,7 +265,7 @@
             <!-- Sky -->
            		<a-sky color="#ECECEC"></a-sky>
 
-				<a-entity id="soundtrack" position="0 5 0" sound="src: url(media/audio.mp3); autoplay: true; volume: 10; refDistance: 10; rolloffFactor: 0.5;"></a-entity>
+				<a-entity id="soundtrack" position="0 5 0" sound="src: #audio; volume: 10; refDistance: 10; rolloffFactor: 0.5;"></a-entity>
 					
 			</a-scene>
 
